@@ -18,146 +18,158 @@
             }
         }
     </script>
+    <style>
+        /* Estilos para asegurar que las imágenes se corten bien */
+        .card-img { height: 220px; width: 100%; object-fit: cover; }
+        .gallery-img { height: 200px; width: 100%; object-fit: cover; transition: transform 0.3s; }
+        .gallery-img:hover { transform: scale(1.05); }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
 
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <img src="logo.png" alt="Reyco Energy Logo" class="h-12 onerror-fallback" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-b-4 border-reycoGold">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="logo.png" alt="Reyco Energy Logo" class="h-20 md:h-24 onerror-fallback" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';">
                 <div id="logo-text" class="hidden">
-                    <span class="text-reycoBlue font-extrabold text-2xl tracking-tight">REYCO</span>
-                    <span class="text-reycoGold font-bold text-2xl tracking-tight">ENERGY</span>
+                    <span class="text-reycoBlue font-extrabold text-3xl tracking-tighter">REYCO</span>
+                    <span class="text-reycoGold font-bold text-3xl tracking-tighter">ENERGY</span>
                 </div>
             </div>
-            <div class="hidden md:flex gap-8 font-semibold text-reycoBlue">
-                <a href="#solar" class="hover:text-reycoGold transition">Energía Solar</a>
-                <a href="#baterias" class="hover:text-reycoGold transition">Baterías</a>
-                <a href="#cargadores" class="hover:text-reycoGold transition">Cargadores EV</a>
+            <div class="hidden md:flex gap-10 font-bold text-reycoBlue text-lg">
+                <a href="#soluciones" class="hover:text-reycoGold transition">Soluciones</a>
+                <a href="#proyectos" class="hover:text-reycoGold transition">Galería</a>
+                <a href="#nosotros" class="hover:text-reycoGold transition">Nosotros</a>
             </div>
-            <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoBlue hover:bg-slate-800 text-white font-bold py-2 px-6 rounded-full transition flex items-center gap-2 shadow-md">
-                <i class="fab fa-whatsapp text-lg"></i> Cotizar
+            <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoBlue hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-full transition flex items-center gap-2 shadow-lg text-lg">
+                <i class="fab fa-whatsapp text-xl"></i> Cotizar
             </a>
         </div>
     </nav>
 
-    <header class="relative bg-reycoBlue text-white py-32 px-6 overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cube.png')]"></div>
+    <header class="relative bg-reycoBlue text-white py-40 px-6 overflow-hidden">
+        <img src="hero-solar.jpg" alt="Fondo Energía Solar" class="absolute inset-0 w-full h-full object-cover opacity-20" onerror="this.style.display='none'">
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <span class="bg-reycoGold text-reycoBlue font-extrabold text-xs uppercase tracking-widest px-4 py-2 rounded-full">Tecnología de Vanguardia</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mt-6 mb-6 leading-tight">
-                El Futuro de la Energía en Sonora
+            <span class="bg-reycoGold text-reycoBlue font-extrabold text-xs uppercase tracking-widest px-5 py-2 rounded-full shadow">Ingeniería para el Desierto</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mt-8 mb-8 leading-tight">
+                Independencia Energética Inteligente
             </h1>
-            <p class="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto font-light leading-relaxed mb-10">
-                Diseño, venta e instalación de sistemas solares de alta eficiencia, sistemas de almacenamiento inteligente y cargadores de vehículos eléctricos.
+            <p class="text-xl md:text-2xl text-slate-100 max-w-4xl mx-auto font-light leading-relaxed mb-12">
+                Paneles Solares, Almacenamiento con Baterías y Cargadores EV. Diseñamos soluciones integrales para hogares y empresas en todo Sonora.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoGold hover:bg-yellow-400 text-reycoBlue font-extrabold py-4 px-10 rounded-full transition shadow-lg text-lg">
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoGold hover:bg-yellow-400 text-reycoBlue font-extrabold py-5 px-12 rounded-full transition shadow-2xl text-xl">
                     Solicitar Cotización Gratis
+                </a>
+                <a href="#soluciones" class="bg-white/10 hover:bg-white/20 text-white font-semibold py-5 px-12 rounded-full transition text-xl backdrop-blur-sm">
+                    Ver Soluciones
                 </a>
             </div>
         </div>
     </header>
 
-    <section class="max-w-7xl mx-auto py-24 px-6">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-reycoBlue mb-4 uppercase tracking-wide">Nuestras Soluciones</h2>
-        <p class="text-center text-gray-500 mb-16 max-w-xl mx-auto">Ingeniería especializada para reducir tu factura eléctrica y asegurar tu independencia energética.</p>
+    <section id="soluciones" class="max-w-7xl mx-auto py-28 px-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center text-reycoBlue mb-5 uppercase tracking-wide">Nuestras Soluciones</h2>
+        <p class="text-center text-gray-500 mb-20 max-w-2xl mx-auto text-lg">Tecnología certificada y diseño personalizado para maximizar tu ahorro y seguridad.</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             
-            <div id="solar" class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition flex flex-col justify-between">
-                <div>
-                    <div class="h-48 bg-slate-100 flex items-center justify-center text-reycoBlue text-6xl">
-                        <i class="fas fa-solar-panel"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-reycoBlue">Paneles Solares</h3>
-                        <p class="text-gray-600 font-light text-sm leading-relaxed">
-                            Sistemas fotovoltaicos interconectados para residencias, comercios e industrias en Sonora. Diseñados con módulos de alta gama para maximizar la generación en zonas de alta temperatura.
-                        </p>
-                    </div>
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col">
+                <img src="tarjeta-solar.jpg" alt="Instalación de Paneles Solares" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1509391366360-fe5bb658582f?w=800&q=80'">
+                <div class="p-10 flex-grow">
+                    <h3 class="text-2xl font-bold mb-4 text-reycoBlue">Energía Solar Fotovoltaica</h3>
+                    <p class="text-gray-600 font-light text-base leading-relaxed mb-6">
+                        Sistemas interconectados residenciales e industriales. Paneles de alta eficiencia diseñados para el calor extremo de Sonora.
+                    </p>
                 </div>
-                <div class="p-8 pt-0">
-                    <hr class="mb-4 border-slate-100">
-                    <span class="text-xs font-bold text-reycoGold uppercase tracking-wider">Ahorro Inmediato</span>
+                <div class="p-10 pt-0">
+                    <span class="text-sm font-bold text-reycoGold uppercase tracking-wider bg-reycoBlue/5 px-3 py-1 rounded-full">Ahorro Inmediato</span>
                 </div>
             </div>
 
-            <div id="baterias" class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition flex flex-col justify-between">
-                <div>
-                    <div class="h-48 bg-slate-100 flex items-center justify-center text-reycoBlue text-6xl">
-                        <i class="fas fa-battery-three-quarters"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-reycoBlue">Sistemas con Baterías</h3>
-                        <p class="text-gray-600 font-light text-sm leading-relaxed">
-                            Asegura energía ininterrumpida las 24 horas del día. Ideal para proteger tus equipos comerciales contra apagones y optimizar el consumo en horarios pico de tarifa CFE.
-                        </p>
-                    </div>
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col">
+                <img src="tarjeta-bateria.jpg" alt="Sistema de Baterías de Respaldo" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1690555575753-1563f66d4827?w=800&q=80'">
+                <div class="p-10 flex-grow">
+                    <h3 class="text-2xl font-bold mb-4 text-reycoBlue">Baterías de Respaldo</h3>
+                    <p class="text-gray-600 font-light text-base leading-relaxed mb-6">
+                        Asegura energía las 24 horas. Protégete contra apagones de CFE y optimiza tu consumo en horarios pico.
+                    </p>
                 </div>
-                <div class="p-8 pt-0">
-                    <hr class="mb-4 border-slate-100">
-                    <span class="text-xs font-bold text-reycoGold uppercase tracking-wider">Respaldo Inteligente</span>
+                <div class="p-10 pt-0">
+                    <span class="text-sm font-bold text-reycoGold uppercase tracking-wider bg-reycoBlue/5 px-3 py-1 rounded-full">Energía Continua</span>
                 </div>
             </div>
 
-            <div id="cargadores" class="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition flex flex-col justify-between">
-                <div>
-                    <div class="h-48 bg-slate-100 flex items-center justify-center text-reycoBlue text-6xl">
-                        <i class="fas fa-charging-station"></i>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-reycoBlue">Cargadores EV</h3>
-                        <p class="text-gray-600 font-light text-sm leading-relaxed">
-                            Instalación profesional de estaciones de carga rápida para vehículos eléctricos en tu hogar, negocio o flotilla comercial, bajo estrictas normas de seguridad eléctrica.
-                        </p>
-                    </div>
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col">
+                <img src="tarjeta-ev.jpg" alt="Cargador de Vehículo Eléctrico" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80'">
+                <div class="p-10 flex-grow">
+                    <h3 class="text-2xl font-bold mb-4 text-reycoBlue">Cargadores EV</h3>
+                    <p class="text-gray-600 font-light text-base leading-relaxed mb-6">
+                        Instalación profesional de estaciones de carga rápida para tu hogar o flotilla comercial. Seguridad y rapidez garantizadas.
+                    </p>
                 </div>
-                <div class="p-8 pt-0">
-                    <hr class="mb-4 border-slate-100">
-                    <span class="text-xs font-bold text-reycoGold uppercase tracking-wider">Electromovilidad</span>
+                <div class="p-10 pt-0">
+                    <span class="text-sm font-bold text-reycoGold uppercase tracking-wider bg-reycoBlue/5 px-3 py-1 rounded-full">Electromovilidad</span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section class="bg-reycoBlue text-white py-20 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-12 text-reycoGold uppercase tracking-widest">Sello de Calidad REYCO</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-4">
-                    <i class="fas fa-user-shield text-4xl mb-4 text-reycoGold"></i>
-                    <h4 class="font-bold text-lg mb-2">Garantía Real</h4>
-                    <p class="text-slate-300 text-sm font-light">Equipos certificados internacionalmente y diseño robusto para resistir el clima extremo del desierto.</p>
+    <section id="proyectos" class="bg-slate-100 py-28 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-center text-reycoBlue mb-16 uppercase tracking-wide">Nuestra Ingeniería en Acción</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-md"><img src="proyecto1.jpg" alt="Proyecto Solar 1" class="gallery-img" onerror="this.src='https://images.unsplash.com/photo-1548613053-22003c200c87?w=600&q=80'"></div>
+                <div class="overflow-hidden rounded-2xl shadow-md"><img src="proyecto2.jpg" alt="Proyecto Solar 2" class="gallery-img" onerror="this.src='https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=600&q=80'"></div>
+                <div class="overflow-hidden rounded-2xl shadow-md"><img src="proyecto3.jpg" alt="Instalación Baterías" class="gallery-img" onerror="this.src='https://images.unsplash.com/photo-1678912853245-c49b67364b66?w=600&q=80'"></div>
+                <div class="overflow-hidden rounded-2xl shadow-md"><img src="proyecto4.jpg" alt="Cargador EV Comercial" class="gallery-img" onerror="this.src='https://images.unsplash.com/photo-1620313886544-7776f82794c4?w=600&q=80'"></div>
+            </div>
+            <div class="text-center mt-16">
+                <a href="https://wa.me/526444478521" target="_blank" class="text-reycoBlue font-bold text-lg hover:text-reycoGold transition inline-flex items-center gap-2">
+                    Ver más proyectos en WhatsApp <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="bg-reycoBlue text-white py-24 px-6 relative">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-reycoGold uppercase tracking-widest">Sello de Calidad REYCO ENERGY</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white/5 p-10 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <i class="fas fa-certificate text-5xl mb-6 text-reycoGold"></i>
+                    <h4 class="font-bold text-xl mb-3">Equipos Certificados</h4>
+                    <p class="text-slate-200 text-base font-light">Trabajamos solo con marcas TIER 1 y componentes aprobados por estándares internacionales.</p>
                 </div>
-                <div class="p-4">
-                    <i class="fas fa-calculator text-4xl mb-4 text-reycoGold"></i>
-                    <h4 class="font-bold text-lg mb-2">Ingeniería a la Medida</h4>
-                    <p class="text-slate-300 text-sm font-light">Sin estimaciones genéricas. Analizamos tu historial de consumo para diseñar el sistema óptimo.</p>
+                <div class="bg-white/5 p-10 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <i class="fas fa-tools text-5xl mb-6 text-reycoGold"></i>
+                    <h4 class="font-bold text-xl mb-3">Diseño Robustecido</h4>
+                    <p class="text-slate-200 text-base font-light">Estructuras y cableado sobredimensionados para garantizar la operación en el desierto de Sonora.</p>
                 </div>
-                <div class="p-4">
-                    <i class="fas fa-file-signature text-4xl mb-4 text-reycoGold"></i>
-                    <h4 class="font-bold text-lg mb-2">Trámites Listos</h4>
-                    <p class="text-slate-300 text-sm font-light">Nos encargamos del proceso completo de interconexión con CFE y validaciones de seguridad.</p>
+                <div class="bg-white/5 p-10 rounded-2xl backdrop-blur-sm border border-white/10">
+                    <i class="fas fa-handshake text-5xl mb-6 text-reycoGold"></i>
+                    <h4 class="font-bold text-xl mb-3">Soporte Local</h4>
+                    <p class="text-slate-200 text-base font-light">Ingeniería y mantenimiento rápidos. Estamos en Sonora para atenderte de inmediato.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-white py-24 text-center px-6">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-reycoBlue mb-4">¿Listo para cambiar a energía inteligente?</h2>
-        <p class="text-gray-500 mb-10 max-w-md mx-auto italic">Solicita un diagnóstico de tu recibo de luz sin costo alguno.</p>
-        <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoGold hover:bg-yellow-400 text-reycoBlue font-extrabold py-4 px-12 rounded-full transition shadow-xl text-lg inline-flex items-center gap-3">
-            <i class="fab fa-whatsapp text-xl"></i> Hablar con un Ingeniero
+    <section class="bg-white py-28 text-center px-6 border-t border-slate-100">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-reycoBlue mb-5">¿Iniciamos tu proyecto de ahorro?</h2>
+        <p class="text-gray-500 mb-12 max-w-xl mx-auto italic text-lg">Diagnóstico técnico de tu recibo de CFE sin compromiso.</p>
+        <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoGold hover:bg-yellow-400 text-reycoBlue font-extrabold py-5 px-14 rounded-full transition shadow-2xl text-xl inline-flex items-center gap-3">
+            <i class="fab fa-whatsapp text-2xl"></i> Hablar con un Ingeniero
         </a>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 px-6 border-t border-slate-800 text-center">
+    <footer class="bg-slate-900 text-slate-400 py-16 px-6 border-t border-slate-800 text-center">
         <div class="max-w-5xl mx-auto">
-            <p class="mb-4 font-semibold text-white">REYCO ENERGY</p>
-            <p class="text-sm mb-8">Ciudad Obregón / Navojoa / Hermosillo, Sonora.</p>
-            <p class="text-xs">&copy; 2026 Reyco Energy. Todos los derechos reservados. Diseñado bajo estándares NOM.</p>
+            <img src="logo.png" alt="Reyco Energy Logo" class="h-20 mx-auto mb-8 opacity-60">
+            <p class="text-sm mb-10 leading-relaxed max-w-md mx-auto">Ciudad Obregón / Navojoa / Hermosillo, Sonora. Especialistas en Energía Inteligente.</p>
+            <p class="text-xs tracking-wider">&copy; 2026 Reyco Energy. Todos los derechos reservados. Ingeniería bajo NOM-001-SEDE.</p>
         </div>
     </footer>
 
