@@ -19,10 +19,7 @@
         }
     </script>
     <style>
-        /* Estilos para asegurar que las imágenes se corten bien */
         .card-img { height: 220px; width: 100%; object-fit: cover; }
-        .gallery-img { height: 200px; width: 100%; object-fit: cover; transition: transform 0.3s; }
-        .gallery-img:hover { transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans">
@@ -38,11 +35,11 @@
             </div>
             <div class="hidden md:flex gap-10 font-bold text-reycoBlue text-lg">
                 <a href="#soluciones" class="hover:text-reycoGold transition">Soluciones</a>
-                <a href="#proyectos" class="hover:text-reycoGold transition">Galería</a>
+                <a href="#cotizador" class="hover:text-reycoGold transition">Solicitar Diagnóstico</a>
                 <a href="#nosotros" class="hover:text-reycoGold transition">Nosotros</a>
             </div>
-            <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoBlue hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-full transition flex items-center gap-2 shadow-lg text-lg">
-                <i class="fab fa-whatsapp text-xl"></i> Cotizar
+            <a href="#cotizador" class="bg-reycoBlue hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-full transition flex items-center gap-2 shadow-lg text-lg">
+                <i class="fas fa-calculator text-lg"></i> Cotizar
             </a>
         </div>
     </nav>
@@ -58,8 +55,8 @@
                 Paneles Solares, Almacenamiento con Baterías y Cargadores EV. Diseñamos soluciones integrales para hogares y empresas en todo Sonora.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-5">
-                <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoGold hover:bg-yellow-400 text-reycoBlue font-extrabold py-5 px-12 rounded-full transition shadow-2xl text-xl">
-                    Solicitar Cotización Gratis
+                <a href="#cotizador" class="bg-reycoGold hover:bg-yellow-400 text-reycoBlue font-extrabold py-5 px-12 rounded-full transition shadow-2xl text-xl">
+                    Iniciar Diagnóstico de Ahorro
                 </a>
                 <a href="#soluciones" class="bg-white/10 hover:bg-white/20 text-white font-semibold py-5 px-12 rounded-full transition text-xl backdrop-blur-sm">
                     Ver Soluciones
@@ -116,20 +113,84 @@
         </div>
     </section>
 
-    <section id="proyectos" class="bg-slate-100 py-28 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-extrabold text-center text-reycoBlue mb-16 uppercase tracking-wide">Nuestra Ingeniería en Acción</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="overflow-hidden rounded-2xl shadow-md"><img src="proyecto1.jpg" alt="Proyecto Solar 1" class="gallery-img" onerror="this.src='https://images.unsplash.com/photo-1548613053-22003c200c87?w=600&q=80'"></div>
-                <div class="overflow-hidden rounded-2xl shadow-md"><img src="proyecto2.jpg" alt="Proyecto Solar 2" class="gallery-img" onerror="this.src='https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=600&q=80'"></div>
-                <div class="overflow-hidden rounded-2xl shadow-md"><img src="proyecto3.jpg" alt="Instalación Baterías" class="gallery-img" onerror="this.src='https://images.unsplash.com/photo-1678912853245-c49b67364b66?w=600&q=80'"></div>
-                <div class="overflow-hidden rounded-2xl shadow-md"><img src="proyecto4.jpg" alt="Cargador EV Comercial" class="gallery-img" onerror="this.src='https://images.unsplash.com/photo-1620313886544-7776f82794c4?w=600&q=80'"></div>
+    <section id="cotizador" class="bg-slate-100 py-24 px-6 border-y border-slate-200">
+        <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-100">
+            <div class="text-center mb-10">
+                <i class="fas fa-file-invoice-dollar text-5xl text-reycoBlue mb-4"></i>
+                <h2 class="text-3xl font-extrabold text-reycoBlue uppercase tracking-wide">Solicita tu Diagnóstico Solar Gratis</h2>
+                <p class="text-gray-500 mt-2">Completa los datos y un ingeniero experto analizará tu recibo para diseñar tu propuesta ideal.</p>
             </div>
-            <div class="text-center mt-16">
-                <a href="https://wa.me/526444478521" target="_blank" class="text-reycoBlue font-bold text-lg hover:text-reycoGold transition inline-flex items-center gap-2">
-                    Ver más proyectos en WhatsApp <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+
+            <form action="https://formspree.io/f/tu-id-de-formspree" method="POST" class="space-y-6">
+                
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider" for="nombre">Nombre Completo</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez" 
+                            class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-reycoBlue transition">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider" for="ubicacion">Ubicación (Municipio)</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <input type="text" id="ubicacion" name="ubicacion" required placeholder="Ej. Ciudad Obregón, Sonora" 
+                                class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-reycoBlue transition">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider" for="contacto">Teléfono o WhatsApp</label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                <i class="fab fa-whatsapp"></i>
+                            </span>
+                            <input type="tel" id="contacto" name="contacto" required placeholder="Ej. 6444123456" 
+                                class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-reycoBlue transition">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider">Tipo de Instalación</label>
+                    <div class="grid grid-cols-3 gap-4">
+                        <label class="flex flex-col items-center justify-center p-4 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100 transition checked:bg-blue-100">
+                            <input type="radio" name="tipo_servicio" value="Residencial" required class="mb-2 accent-reycoBlue">
+                            <span class="text-xs font-bold text-slate-700 text-center">Residencial</span>
+                        </label>
+                        <label class="flex flex-col items-center justify-center p-4 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100 transition">
+                            <input type="radio" name="tipo_servicio" value="Comercial" class="mb-2 accent-reycoBlue">
+                            <span class="text-xs font-bold text-slate-700 text-center">Comercial</span>
+                        </label>
+                        <label class="flex flex-col items-center justify-center p-4 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100 transition">
+                            <input type="radio" name="tipo_servicio" value="Empresa" class="mb-2 accent-reycoBlue">
+                            <span class="text-xs font-bold text-slate-700 text-center">Empresa / Ind.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider" for="gasto_luz">Gasto más elevado en tu recibo de luz (MXN)</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                            <i class="fas fa-dollar-sign"></i>
+                        </span>
+                        <input type="text" id="gasto_luz" name="gasto_luz" required placeholder="Ej. $8,500 pesos bimestrales" 
+                            class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-reycoBlue transition">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-reycoBlue hover:bg-slate-800 text-white font-extrabold py-4 rounded-xl transition shadow-lg text-lg flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i> Enviar Información
+                </button>
+            </form>
         </div>
     </section>
 
@@ -155,14 +216,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="bg-white py-28 text-center px-6 border-t border-slate-100">
-        <h2 class="text-4xl md:text-5xl font-extrabold text-reycoBlue mb-5">¿Iniciamos tu proyecto de ahorro?</h2>
-        <p class="text-gray-500 mb-12 max-w-xl mx-auto italic text-lg">Diagnóstico técnico de tu recibo de CFE sin compromiso.</p>
-        <a href="https://wa.me/526444478521" target="_blank" class="bg-reycoGold hover:bg-yellow-400 text-reycoBlue font-extrabold py-5 px-14 rounded-full transition shadow-2xl text-xl inline-flex items-center gap-3">
-            <i class="fab fa-whatsapp text-2xl"></i> Hablar con un Ingeniero
-        </a>
     </section>
 
     <footer class="bg-slate-900 text-slate-400 py-16 px-6 border-t border-slate-800 text-center">
